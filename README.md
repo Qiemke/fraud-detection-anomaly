@@ -1,11 +1,15 @@
 # 🛡️ Обнаружение аномалий и фрод-детекция в транзакциях
 
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-latest-orange?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-latest-green?logo=xgboost&logoColor=white)](https://xgboost.readthedocs.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10.4-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Poetry](https://img.shields.io/badge/Poetry-managed-60A5FA?logo=poetry&logoColor=white)](https://python-poetry.org/)
+[![DVC](https://img.shields.io/badge/DVC-data%20versioning-945DD6?logo=dvc&logoColor=white)](https://dvc.org/)
+[![MLflow](https://img.shields.io/badge/MLflow-tracking-0194E2?logo=mlflow&logoColor=white)](https://mlflow.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![flake8](https://img.shields.io/badge/lint-flake8-yellow.svg)](https://flake8.pycqa.org/)
 
-> **Проект №133** в рамках курса/программы [Название программы, если есть].
+> **Статус проекта:** 🟡 Инициализация репозитория · Roadmap на согласовании · Ожидается старт EDA
+
+> **Проект №133** — Обнаружение аномалий / фрод-детекция в рамках курса программы Искусственный интеллект НИУ ВШЭ.
 > Построение модели обнаружения аномальных и мошеннических транзакций в потоке данных.
 
 ---
@@ -25,11 +29,9 @@
 *   [Credit Card Fraud Detection (ULB, Kaggle)](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 *   [IEEE-CIS Fraud Detection (Kaggle)](https://www.kaggle.com/c/ieee-fraud-detection)
 
-### 🛠 Методы и инструменты
-*   **Unsupervised:** Isolation Forest, One-Class SVM, Local Outlier Factor (LOF).
-*   **Supervised:** XGBoost с балансировкой классов (class weighting).
-*   **Метрики:** PR-AUC (приоритет при сильном дисбалансе), Recall при фиксированном Precision.
-*   **Усложнения:** Потоковое (online) обнаружение, объяснение решений модели для комплаенса.
+### 🎯 Метрики качества
+*   **PR-AUC** — приоритетная метрика при сильном дисбалансе классов.
+*   **Recall** при фиксированном уровне **Precision**.
 
 ---
 
@@ -37,50 +39,94 @@
 
 | Роль | Участник | Контакты |
 | :--- | :--- | :--- |
-| **Руководитель** | Архипов Максим | [@username](https://github.com/username) |
-| **Участник 1** | [Имя Фамилия] | [@username](https://github.com/username) |
-| **Участник 2** | [Имя Фамилия] | [@username](https://github.com/username) |
-| **Участник 3** | [Имя Фамилия] | [@username](https://github.com/username) |
+| **Куратор** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
+| **Участник 1** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
+| **Участник 2** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
+| **Участник 3** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
 
-> *Примечание: Руководители проекта также указаны в исходном задании: Мовсумов Денис, Архипов Максим, Александр Голубев.*
+---
+
+## 🧰 Технологический стек
+
+Проект следует общим инфраструктурным требованиям программы.
+
+### Core
+| Категория | Инструмент |
+| :--- | :--- |
+| Язык разработки | **Python 3.10.4** |
+| Менеджмент зависимостей | `pip`, `conda` |
+| Менеджмент версий Python | `pyenv`, `poetry` |
+| Виртуальные окружения | `pyenv-virtualenv` |
+| Система контроля версий | `git` (GitLab) |
+| Версионирование данных / workflow | `DVC`, Google Drive |
+| Шаблонизатор проекта | `cookiecutter` |
+
+### Качество кода и тестирование
+| Категория | Инструмент |
+| :--- | :--- |
+| Линтер | `flake8` |
+| Автоформаттер | `black` |
+| Тестирование | `pytest` |
+| CLI | `click`, `argparse` |
+
+### ML и мониторинг
+| Категория | Инструмент |
+| :--- | :--- |
+| ML-стек | `catboost`, `scikit-learn`, `pandas`, `numpy`, `pytorch` |
+| Мониторинг экспериментов | `MLflow` |
+| Парсинг | `pyautogui` |
 
 ---
 
 ## 🗺 План работы (Roadmap)
 
+> ⚠️ **Важно:** Перечисленные задачи являются ориентиром. Участники вправе расширять или изменять формулировки по согласованию с **куратором** и **академруком**.
+
 - [ ] **Этап 1: EDA и анализ данных**
   - Изучение дисбаланса классов.
   - Анализ типов аномалий в транзакциях.
 - [ ] **Этап 2: Unsupervised Baseline**
-  - Построение базовой модели (Isolation Forest).
-  - Оценка качества без учителя.
+  - Построение базовой модели (Isolation Forest, One-Class SVM, LOF).
 - [ ] **Этап 3: Supervised модель**
-  - Обучение модели с балансировкой классов (XGBoost).
+  - Обучение модели с балансировкой классов (XGBoost / CatBoost).
   - Подбор гиперпараметров.
 - [ ] **Этап 4: Настройка порога и анализ ошибок**
   - Подбор порога под целевой Precision/Recall.
   - Анализ ложных срабатываний (False Positives).
 - [ ] **Этап 5: Интеграция и мониторинг**
-  - Описание процесса интеграции модели в мониторинг.
-  - Тестирование устойчивости к [укажите факторы, например, дрейфу данных].
+  - Описание процесса интеграции модели в мониторинг (MLflow).
+  - Тестирование устойчивости к дрейфу данных.
 
 ---
 
 ## 📈 Критерии приемки
 
 *   Модель достигает целевого **Recall** при заданном уровне **Precision** (или **PR-AUC** выше baseline).
-*   Протестирована устойчивость к [условие из задания, например, к изменению распределения данных].
+*   Протестирована на устойчивость к дисбалансу классов.
+*   Описан процесс принятия решения (порог, объяснение флагов) для интеграции в процесс проверки.
 
 ---
 
-## 📂 Структура репозитория (примерная)
+## 📂 Структура репозитория
+
+Проект инициализирован через `cookiecutter` (Data Science шаблон).
 
 ```text
 .
-├── data/               # Данные (или ссылки на них)
+├── data/               # Данные (управляются через DVC)
+│   ├── raw/            # Исходные данные
+│   ├── interim/        # Промежуточные данные
+│   └── processed/      # Обработанные данные
+├── models/             # Обученные модели (DVC)
 ├── notebooks/          # Jupyter ноутбуки с EDA и экспериментами
-├── src/                # Исходный код (скрипты обучения, инференса)
-│   ├── models/
-│   └── utils/
-├── requirements.txt    # Зависимости проекта
+├── src/                # Исходный код
+│   ├── data/           # Скрипты загрузки и обработки данных
+│   ├── features/       # Генерация признаков
+│   ├── models/         # Обучение и инференс моделей
+│   └── utils/          # Вспомогательные утилиты
+├── tests/              # Тесты (pytest)
+├── .dvc/               # Конфигурация DVC
+├── pyproject.toml      # Зависимости (poetry) + конфиг black
+├── requirements.txt    # Зависимости (pip)
+├── .flake8             # Конфиг линтера
 └── README.md           # Этот файл
