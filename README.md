@@ -39,7 +39,7 @@
 | **Куратор** | Архипов Максим  | [@pirici_pip](https://t.me/pirici_pip) | |
 | **Участник 1** | Кадыков Вадим | [@Junialay](https://t.me/Junialay) | [@Qiemke](https://github.com/Qiemke) |
 | **Участник 2** | Титов Артём | [@artem_titoff](https://t.me/artem_titoff) | [@Artyom321](https://github.com/Artyom321) |
-| **Участник 3** | Боханов Данила | [@Dansdfsdh](https://t.me/Dansdfsdh) | [@danilabohanov](https://github.com/danilabohanov) |
+| **Участник 3** | Боханов Данила | [@Dansdfsdh](https://t.me/Dansdfsdh) | [@danilabohanov](https://github.com/danilabokhanov) |
 
 ---
 
