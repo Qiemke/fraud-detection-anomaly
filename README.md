@@ -26,7 +26,6 @@
 
 ### 📊 Данные
 В работе используются открытые датасеты:
-*   [Credit Card Fraud Detection (ULB, Kaggle)](https://www.kaggle.com/mlg-ulb/creditcardfraud)
 *   [IEEE-CIS Fraud Detection (Kaggle)](https://www.kaggle.com/c/ieee-fraud-detection)
 
 ### 🎯 Метрики качества
@@ -37,44 +36,12 @@
 
 ## 👥 Команда проекта
 
-| Роль | Участник | Контакты |
-| :--- | :--- | :--- |
-| **Куратор** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
-| **Участник 1** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
-| **Участник 2** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
-| **Участник 3** | [Имя Фамилия] | [TG|@username](https://github.com/username) |
-
----
-
-## 🧰 Технологический стек
-
-Проект следует общим инфраструктурным требованиям программы.
-
-### Core
-| Категория | Инструмент |
-| :--- | :--- |
-| Язык разработки | **Python 3.10.4** |
-| Менеджмент зависимостей | `pip`, `conda` |
-| Менеджмент версий Python | `pyenv`, `poetry` |
-| Виртуальные окружения | `pyenv-virtualenv` |
-| Система контроля версий | `git` (GitLab) |
-| Версионирование данных / workflow | `DVC`, Google Drive |
-| Шаблонизатор проекта | `cookiecutter` |
-
-### Качество кода и тестирование
-| Категория | Инструмент |
-| :--- | :--- |
-| Линтер | `flake8` |
-| Автоформаттер | `black` |
-| Тестирование | `pytest` |
-| CLI | `click`, `argparse` |
-
-### ML и мониторинг
-| Категория | Инструмент |
-| :--- | :--- |
-| ML-стек | `catboost`, `scikit-learn`, `pandas`, `numpy`, `pytorch` |
-| Мониторинг экспериментов | `MLflow` |
-| Парсинг | `pyautogui` |
+| Роль | Участник | Telegram | GitHub |
+| :--- | :--- | :--- | :--- |
+| **Куратор** | [Имя Фамилия] | [@username](https://t.me/username) | [@username](https://github.com/username) |
+| **Участник 1** | Кадыков Вадим | [@Junialay](https://t.me/Junialay) | [@Qiemke](https://github.com/Qiemke) |
+| **Участник 2** | [Имя Фамилия] | [@username](https://t.me/username) | [@username](https://github.com/username) |
+| **Участник 3** | [Имя Фамилия] | [@username](https://t.me/username) | [@username](https://github.com/username) |
 
 ---
 
@@ -105,28 +72,4 @@
 *   Протестирована на устойчивость к дисбалансу классов.
 *   Описан процесс принятия решения (порог, объяснение флагов) для интеграции в процесс проверки.
 
----
-
-## 📂 Структура репозитория
-
-Проект инициализирован через `cookiecutter` (Data Science шаблон).
-
-```text
-.
-├── data/               # Данные (управляются через DVC)
-│   ├── raw/            # Исходные данные
-│   ├── interim/        # Промежуточные данные
-│   └── processed/      # Обработанные данные
-├── models/             # Обученные модели (DVC)
-├── notebooks/          # Jupyter ноутбуки с EDA и экспериментами
-├── src/                # Исходный код
-│   ├── data/           # Скрипты загрузки и обработки данных
-│   ├── features/       # Генерация признаков
-│   ├── models/         # Обучение и инференс моделей
-│   └── utils/          # Вспомогательные утилиты
-├── tests/              # Тесты (pytest)
-├── .dvc/               # Конфигурация DVC
-├── pyproject.toml      # Зависимости (poetry) + конфиг black
-├── requirements.txt    # Зависимости (pip)
-├── .flake8             # Конфиг линтера
 └── README.md           # Этот файл
